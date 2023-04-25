@@ -1,0 +1,6 @@
+/**
+ * Archivo de entrada de Tailwind CSS para el backend.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

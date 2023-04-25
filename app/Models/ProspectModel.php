@@ -39,4 +39,24 @@ class ProspectModel extends Model
 
     // Callbacks
     protected $allowCallbacks = false;
+
+    /**
+     * Estado del prospecto.
+     */
+    public function state()
+    {
+        $this->builder()->join('states', 'states.id = prospects.state_id', 'inner');
+
+        return $this;
+    }
+
+    /**
+     * Origen del prospecto.
+     */
+    public function origin()
+    {
+        $this->builder()->join('origin', 'origin.id = prospects.origin_id', 'inner');
+
+        return $this;
+    }
 }
