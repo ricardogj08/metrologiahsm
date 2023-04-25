@@ -1,0 +1,7 @@
+/**
+ * Archivo de entrada de Tailwind CSS
+ * para el sistema web, el sitio web y las landings.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
