@@ -14,11 +14,38 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: '576px',
+        md: '768px',
+        lg: '992px',
+        xl: '1200px',
+        '2xl': '1400px'
+      },
       container: {
         center: true,
         padding: {
-          DEFAULT: '1rem' // < 540px
+          DEFAULT: '1rem', // < 540px
+          md: '7.125rem', // 540px
+          lg: '8.5rem', // 720px
+          xl: '7.5rem', // 960px
+          '2xl': '8.125rem' // 1140px
         }
+      },
+      fontFamily: {
+        sans: ['Open Sans', 'sans-serif']
+      },
+      colors: {
+        hsm: {
+          yellow: {
+            100: '#FFD200'
+          },
+          gray: {
+            100: '#303039'
+          }
+        }
+      },
+      backgroundImage: {
+        'back-landing': "url('../images/landing/pages/landing-hero.webp')"
       }
     }
   },

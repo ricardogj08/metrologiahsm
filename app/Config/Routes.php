@@ -31,6 +31,9 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+// Landing
+$routes->get('landing/(:segment)', 'Landing\Pages::show/$1', ['as' => 'landing.pages.show']);
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
