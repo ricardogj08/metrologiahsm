@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f961d02ae5be8b29a84d04ac7f73f620",
+    "content-hash": "3167b91c85e89d4bd8c4ddf19990a8ec",
     "packages": [
         {
             "name": "codeigniter4/framework",
@@ -192,6 +192,50 @@
                 "source": "https://github.com/codeigniter4/translations"
             },
             "time": "2023-03-18T16:54:31+00:00"
+        },
+        {
+            "name": "kodus/uuid-v4",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kodus/uuid-v4.git",
+                "reference": "3ad041e9df4e63a37583a0137c71a23d106da217"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kodus/uuid-v4/zipball/3ad041e9df4e63a37583a0137c71a23d106da217",
+                "reference": "3ad041e9df4e63a37583a0137c71a23d106da217",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.0"
+            },
+            "require-dev": {
+                "codeception/codeception": "^5",
+                "codeception/module-asserts": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Kodus\\Helpers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "René Højbjerg Larsen",
+                    "email": "rhl@jfmedier.dk"
+                }
+            ],
+            "description": "Simple UUID v4 generator",
+            "support": {
+                "issues": "https://github.com/kodus/uuid-v4/issues",
+                "source": "https://github.com/kodus/uuid-v4/tree/1.2.0"
+            },
+            "time": "2022-08-24T10:34:31+00:00"
         },
         {
             "name": "laminas/laminas-escaper",

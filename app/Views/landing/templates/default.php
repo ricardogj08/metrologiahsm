@@ -1,4 +1,10 @@
-<?php $lang = request()->getLocale() ?>
+<?php
+use CodeIgniter\Files\File;
+
+$lang            = request()->getLocale();
+$favicon         = 'uploads/settings/' . setting()->get('App.general', 'favicon');
+$faviconMimeType = (new File(FCPATH . $favicon, true))->getMimeType();
+?>
 
 <?= $this->extend('landing/templates/boilerplate') ?>
 
@@ -9,7 +15,7 @@
     <link rel="canonical" href="<?= current_url() ?>" hreflang="<?= esc($lang) ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="" href="<?= base_url('favicon.svg') ?>">
+    <link rel="icon" type="<?= $faviconMimeType ?>" href="<?= base_url($favicon) ?>">
 
     <!-- Hojas de estilos -->
     <link rel="stylesheet" href="<?= base_url('css/website.css') ?>">

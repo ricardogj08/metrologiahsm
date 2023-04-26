@@ -25,6 +25,6 @@ class SettingSeeder extends Seeder
 
         setting()->get('App.general', 'logo') ?? setting()->set('App.general', 'logo.webp', 'logo');
 
-        // setting()->get('App.emails', 'to') ?? setting()->set('App.emails', 'pruebas@genotipo.com', 'to');
+        setting()->get('App.emails', 'to') ?? setting()->set('App.emails', 'pruebas@genotipo.com', 'to');
     }
 }
