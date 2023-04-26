@@ -5,3 +5,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+   scroll-behavior: smooth;
+  }
+  html,
+  body {
+      font-family: "Open Sans", "sans-serif";
+  }
+}
+
+@layer components {
+ .wrapper-web {
+     @apply max-w-[2440px] min-w-[300px];
+ }
+
+ .container-w {
+     @apply max-w-[1770px] mx-auto w-11/12;
+ }
+}
