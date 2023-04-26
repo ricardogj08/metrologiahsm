@@ -31,6 +31,9 @@ module.exports = {
           '2xl': '8.125rem' // 1140px
         }
       },
+      gap: {
+        7.5: '1.875rem' // Bootstrap's gutter 30px
+      },
       fontFamily: {
         sans: ['Open Sans', 'sans-serif']
       },

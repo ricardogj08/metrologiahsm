@@ -19,6 +19,7 @@ class Prospects extends BaseController
             'phone'     => 'required|max_length[15]|numeric',
             'email'     => 'required|max_length[256]|valid_email',
             'company'   => 'required|max_length[128]',
+            'city'      => 'required|max_length[128]',
             'message'   => 'required|max_length[4096]',
         ])) {
             return redirect()
@@ -36,13 +37,14 @@ class Prospects extends BaseController
             'phone'     => stripAllSpaces($this->request->getPost('phone')),
             'email'     => lowerCase(stripAllSpaces($this->request->getPost('email'))),
             'company'   => trimAll($this->request->getPost('company')),
+            'city'      => trimAll($this->request->getPost('city')),
             'message'   => trimAll($this->request->getPost('message')),
         ]);
 
         $id = $prospectModel->getInsertID();
 
         // Consulta los datos del prospecto.
-        $prospect = $prospectModel->select('prospects.name, prospects.phone, prospects.email, prospects.company, states.name as state, origins.name as origin, prospects.created_at')
+        $prospect = $prospectModel->select('prospects.name, prospects.phone, prospects.email, prospects.company, states.name as state, prospects.city, origins.name as origin, prospects.message, prospects.created_at')
             ->state()
             ->origin()
             ->find($id);
@@ -56,7 +58,7 @@ class Prospects extends BaseController
         $email->setBCC(setting()->get('App.emails', 'bcc'));
 
         // Define el asunto y el cuerpo del mensaje.
-        $email->setSubject('Prospecto');
+        $email->setSubject('Prospecto de Google Ads');
         $email->setMessage(view('backend/emails/prospect', [
             'title'    => 'Prospecto de Google Ads',
             'prospect' => $prospect,
@@ -64,7 +66,7 @@ class Prospects extends BaseController
 
         // Envía el email.
         if ($email->send()) {
-            return view('website/prospects/create');
+            return 'Gracias';
         }
 
         // Elimina el registro del prospecto si falla el envío.

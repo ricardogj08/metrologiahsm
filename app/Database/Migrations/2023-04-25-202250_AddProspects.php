@@ -41,6 +41,10 @@ class AddProspects extends Migration
                 'type'       => 'varchar',
                 'constraint' => 128,
             ],
+            'city' => [
+                'type'       => 'varchar',
+                'constraint' => 128,
+            ],
             'message' => [
                 'type' => 'text',
             ],

@@ -29,10 +29,17 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::index', ['as' => 'website.pages.home']);
 
-// Landing
-$routes->get('landing/(:segment)', 'Landing\Pages::show/$1', ['as' => 'landing.pages.show']);
+/**
+ * Definición de rutas de la landing.
+ */
+$routes->group('landing', static function ($routes) {
+    $routes->post('gracias', 'Landing\Prospects::create', ['as' => 'landing.prospects.create']);
+
+    // Rutas de las páginas de la landing.
+    $routes->get('(:segment)', 'Landing\Pages::show/$1', ['as' => 'landing.pages.show']);
+});
 
 /*
  * --------------------------------------------------------------------

@@ -1,4 +1,4 @@
-<?= $this->extend('backend/templates/emails') ?>
+<?= $this->extend('backend/templates/email') ?>
 
 <?= $this->section('head') ?>
     <title>
@@ -60,6 +60,15 @@
             </h2>
             <p class="flex-1">
                 <?= esc($prospect['state']) ?>
+            </p>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-x-4 odd:bg-base-100 even:bg-base-200 p-2">
+            <h2 class="font-bold lg:w-1/3">
+                Ciudad:
+            </h2>
+            <p class="flex-1">
+                <?= esc($prospect['city']) ?>
             </p>
         </div>
 

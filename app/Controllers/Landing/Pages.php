@@ -13,6 +13,21 @@ class Pages extends BaseController
      */
     public function show($slug = null)
     {
-        return view('landing/pages/show');
+        $stateModel = model('StateModel');
+
+        // Consulta todos los estados.
+        $states = $stateModel->orderBy('name', 'asc')
+            ->findAll();
+
+        $originModel = model('OriginModel');
+
+        // Consulta todos los orígenes.
+        $origins = $originModel->orderBy('id')
+            ->findAll();
+
+        return view('landing/pages/show', [
+            'states'  => $states,
+            'origins' => $origins,
+        ]);
     }
 }

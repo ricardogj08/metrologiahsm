@@ -22,6 +22,7 @@ class ProspectModel extends Model
         'phone',
         'email',
         'company',
+        'city',
         'message',
         'rating',
         'observations',
@@ -55,7 +56,7 @@ class ProspectModel extends Model
      */
     public function origin()
     {
-        $this->builder()->join('origin', 'origin.id = prospects.origin_id', 'inner');
+        $this->builder()->join('origins', 'origins.id = prospects.origin_id', 'inner');
 
         return $this;
     }
