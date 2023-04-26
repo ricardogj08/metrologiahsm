@@ -41,6 +41,16 @@ $routes->group('landing', static function ($routes) {
     $routes->get('(:segment)', 'Landing\Pages::show/$1', ['as' => 'landing.pages.show']);
 });
 
+/**
+ * Definición de rutas del sistema.
+ */
+$routes->group('sistema', static function ($routes) {
+    $routes->group('login', static function ($routes) {
+        $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login']);
+        $routes->get('nueva-contrasena', 'System\Auth::newPassword', ['as' => 'system.auth.newPassword']);
+    });
+});
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

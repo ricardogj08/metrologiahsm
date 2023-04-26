@@ -1,0 +1,23 @@
+<?php $lang = request()->getLocale() ?>
+
+<!doctype html>
+<html lang="<?= esc($lang) ?>">
+<head>
+    <!-- Plantilla base para todas las páginas del sistema -->
+
+    <!-- Meta etiquetas generales -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="<?= esc(setting()->get('App.general', 'company')) ?>">
+
+    <!-- Sección de etiquetas agregadas al head -->
+    <?= $this->renderSection('head') ?>
+</head>
+<body>
+    <!-- Sección del contenido agregado a la página web -->
+    <?= $this->renderSection('content') ?>
+
+    <!-- Sección de scripts de javascript agregados a la página web -->
+    <?= $this->renderSection('javascript') ?>
+</body>
+</html>
