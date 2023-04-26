@@ -1,13 +1,21 @@
 <?= $this->extend('system/templates/auth') ?>
 
 <?= $this->section('head') ?>
+    <title>
+        Bienvenido
+    </title>
+
+    <meta
+        name="description"
+        content="Inicia sesión."
+    >
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
     <figure class="absolute -top-14 left-0 w-full">
         <img
             src="<?= base_url('images/system/auth/login.webp') ?>"
-            alt=""
+            alt="Bienvenido"
             class="w-auto h-24 lg:h-32 m-auto"
         >
     </figure>
