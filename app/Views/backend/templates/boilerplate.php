@@ -13,9 +13,6 @@ $theme = setting()->get('App.general', 'theme');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="<?= esc(setting()->get('App.general', 'company')) ?>">
 
-    <!-- Declaración de la URL de la página web -->
-    <link rel="canonical" href="<?= current_url() ?>" hreflang="<?= esc($lang) ?>">
-
     <!-- Sección de etiquetas agregadas al head -->
     <?= $this->renderSection('head') ?>
 </head>

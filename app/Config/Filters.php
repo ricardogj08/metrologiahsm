@@ -2,6 +2,10 @@
 
 namespace Config;
 
+use App\Filters\Auth;
+use App\Filters\AuthRedirect;
+use App\Filters\FormsRates;
+use App\Filters\IsAdmin;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -21,6 +25,10 @@ class Filters extends BaseConfig
         'honeypot'      => Honeypot::class,
         'invalidchars'  => InvalidChars::class,
         'secureheaders' => SecureHeaders::class,
+        'formsrates'    => FormsRates::class,
+        'auth'          => Auth::class,
+        'authredirect'  => AuthRedirect::class,
+        'isadmin'       => IsAdmin::class,
     ];
 
     /**

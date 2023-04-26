@@ -46,8 +46,62 @@ $routes->group('landing', static function ($routes) {
  */
 $routes->group('sistema', static function ($routes) {
     $routes->group('login', static function ($routes) {
-        $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login']);
+        $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login', 'filter' => 'formsrates']);
         $routes->get('nueva-contrasena', 'System\Auth::newPassword', ['as' => 'system.auth.newPassword']);
+    });
+});
+
+/**
+ * Definición de rutas del backend.
+ */
+$routes->group('backend', static function ($routes) {
+    // Definición de rutas de inicio de sesión.
+    $routes->group('login', ['filter' => 'authredirect'], static function ($routes) {
+        $routes->get('', 'Backend\Auth::login', ['as' => 'backend.auth.login']);
+        $routes->post('', 'Backend\Auth::login', ['as' => 'backend.auth.login', 'filter' => 'formsrates']);
+        $routes->get('olvidado', 'Backend\Auth::forgotten', ['as' => 'backend.auth.forgotten']);
+        $routes->post('olvidado', 'Backend\Auth::forgotten', ['as' => 'backend.auth.forgotten', 'filter' => 'formsrates']);
+        $routes->get('recuperacion/(:num)/(:hash)', 'Backend\Auth::recovery/$1/$2', ['as' => 'backend.auth.recovery']);
+        $routes->post('recuperacion/(:num)/(:hash)', 'Backend\Auth::recovery/$1/$2', ['as' => 'backend.auth.recovery', 'filter' => 'formsrates']);
+    });
+
+    $routes->group('', ['filter' => 'auth'], static function ($routes) {
+        // Ruta de cierre de sesión
+        $routes->get('logout', 'Backend\Auth::logout', ['as' => 'backend.auth.logout']);
+
+        // Definición de rutas de la cuenta del usuario de sesión.
+        $routes->match(['get', 'post'], 'cuenta', 'Backend\Account::update', ['as' => 'backend.account.update']);
+
+        // Definición de rutas de configuración del backend.
+        $routes->group('configuraciones', ['filter' => 'isadmin'], static function ($routes) {
+            $routes->get('', 'Backend\Settings::index', ['as' => 'backend.settings.index']);
+            $routes->match(['get', 'post'], 'modificar', 'Backend\Settings::update', ['as' => 'backend.settings.update']);
+        });
+
+        // Definición de rutas de administración de usuarios al backend.
+        $routes->group('usuarios', ['filter' => 'isadmin'], static function ($routes) {
+            $routes->match(['get', 'post'], 'nuevo', 'Backend\Users::create', ['as' => 'backend.users.create']);
+            $routes->get('', 'Backend\Users::index', ['as' => 'backend.users.index']);
+            $routes->match(['get', 'post'], 'modificar/(:num)', 'Backend\Users::update/$1', ['as' => 'backend.users.update']);
+            $routes->post('alternar-cuenta/(:num)', 'Backend\Users::toggleActive/$1', ['as' => 'backend.users.toggleActive']);
+            $routes->post('eliminar/(:num)', 'Backend\Users::delete/$1', ['as' => 'backend.users.delete']);
+        });
+
+        // Definición de rutas de todos los módulos del backend.
+        $routes->group('modulos', static function ($routes) {
+            // Definición de rutas del módulo de prospectos.
+            $routes->group('prospectos', static function ($routes) {
+                $routes->match(['get', 'post'], 'nuevo', 'Backend\Modules\Prospects::create', ['as' => 'backend.modules.prospects.create']);
+                $routes->get('', 'Backend\Modules\Prospects::index', ['as' => 'backend.modules.prospects.index']);
+                $routes->get('(:num)', 'Backend\Modules\Prospects::show/$1', ['as' => 'backend.modules.prospects.show']);
+                $routes->match(['get', 'post'], 'modificar/(:num)', 'Backend\Modules\Prospects::update/$1', ['as' => 'backend.modules.prospects.update']);
+                $routes->post('eliminar/(:num)', 'Backend\Modules\Prospects::delete/$1', ['as' => 'backend.modules.prospects.delete']);
+                $routes->get('descargar', 'Backend\Modules\Prospects::download', ['as' => 'backend.modules.prospects.download']);
+            });
+        });
+
+        // Ruta por defecto.
+        $routes->addRedirect('', 'backend.modules.prospects.index', 301);
     });
 });
 
