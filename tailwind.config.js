@@ -37,13 +37,26 @@ module.exports = {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif']
       },
+      fontSize: {
+        13: '0.813rem', // 13px
+        15: '0.938rem', // 15px
+        22: '1.375rem' // 22px
+      },
       colors: {
         hsm: {
           yellow: {
             100: '#FFD200'
           },
           gray: {
-            100: '#303039'
+            100: '#303039',
+            200: '#565765'
+          },
+          blue: {
+            100: '#304FFE'
+          },
+          purple: {
+            100: '#A9AFD2',
+            200: '#6749E6'
           }
         }
       },
