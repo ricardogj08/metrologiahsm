@@ -9,7 +9,7 @@
     <link rel="canonical" href="<?= current_url() ?>" hreflang="<?= esc($lang) ?>">
 
     <!-- Favicon -->
-    <link rel="icon" type="" href="">
+    <link rel="icon" type="" href="<?= base_url('favicon.svg') ?>">
 
     <!-- Hojas de estilos -->
     <link rel="stylesheet" href="<?= base_url('css/website.css') ?>">
