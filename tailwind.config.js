@@ -10,7 +10,8 @@ module.exports = {
     './app/Views/landing/**/*.php',
     './public/js/landing/**/*.js',
     './app/Views/website/**/*.php',
-    './public/js/website/**/*.js'
+    './public/js/website/**/*.js',
+    './node_modules/flowbite/**/*.js'
   ],
   theme: {
     extend: {
@@ -48,7 +49,11 @@ module.exports = {
             100: '#FFD200'
           },
           light: {
-            100: '#F5F6FF'
+            100: '#F5F6FF',
+            200: '#F9FAFF'
+          },
+          dark: {
+            100: '#1b1b21',
           },
           gray: {
             100: '#303039',
