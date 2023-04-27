@@ -109,7 +109,7 @@
                             Confiabilidad y excelencia garantizada
                         </h3>
                         <p class="mt-4 text-hsm-gray-100">
-                            En HSM, nos tomamos en serio la calidad y precisión de nuestros servicios de metrología, es por ello que contamos con acreditaciones reconocidas internacionalmente que demuestran nuestra capacidad para realizar mediciones precisas y confiables en múltiples áreas de medición.
+                            En HSM, nos tomamos en serio la calidad de nuestros servicios de metrología, es por ello que contamos con acreditaciones reconocidas internacionalmente que demuestran nuestra capacidad para realizar mediciones confiables en múltiples áreas de medición.
                         </p>
                     </hgroup>
                 </div>

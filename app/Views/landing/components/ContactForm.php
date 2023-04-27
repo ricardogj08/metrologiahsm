@@ -18,6 +18,7 @@
             required
             maxlength="128"
             value="<?= set_value('name') ?>"
+            placeholder="Nombre completo"
             aria-required="true"
             class="mt-3 px-3 py-2 rounded-md text-hsm-gray-100"
         >
@@ -38,6 +39,7 @@
             required
             maxlength="128"
             value="<?= set_value('company') ?>"
+            placeholder="Empresa"
             aria-required="true"
             class="mt-3 px-3 py-2 rounded-md text-hsm-gray-100"
         >
@@ -58,6 +60,7 @@
             required
             maxlength="15"
             pattern="[0-9]{1,15}"
+            placeholder="Teléfono"
             value="<?= set_value('phone') ?>"
             aria-required="true"
             class="mt-3 px-3 py-2 rounded-md text-hsm-gray-100"
@@ -78,6 +81,7 @@
             name="email"
             required
             maxlength="256"
+            placeholder="Email"
             value="<?= set_value('email') ?>"
             aria-required="true"
             class="mt-3 px-3 py-2 rounded-md text-hsm-gray-100"
@@ -131,6 +135,7 @@
                 name="city"
                 required
                 maxlength="128"
+                placeholder="Ciudad"
                 value="<?= set_value('city') ?>"
                 class="mt-3 px-3 py-2 rounded-md text-hsm-gray-100"
             >
