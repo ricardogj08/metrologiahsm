@@ -1,5 +1,4 @@
-
-<?= $this->extend('system/templates/page') ?>
+<?= $this->extend('system/templates/dashboard') ?>
 
 <?= $this->section('head') ?>
     <title>
@@ -13,8 +12,7 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('javascript') ?>
-    <script src="<?= base_url('js/components/file.js') ?>"></script>
-    <script src="<?= base_url('js/modules/flowbite.min.js') ?>"></script>
+    <script src="<?= base_url('js/system/components/file.js') ?>"></script>
 <?= $this->endSection() ?>
 
 <?= $this->section('content') ?>
@@ -27,7 +25,6 @@
 
     <!-- Contenido de modulo documentos -->
     <main class="py-8 bg-hsm-light-200 min-h-screen w-full">
-
         <!-- Tabla de Documentos -->
         <section class="">
             <div class="container mb-10">

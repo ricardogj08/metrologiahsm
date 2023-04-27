@@ -7,7 +7,7 @@ use App\Controllers\BaseController;
 class Certificates extends BaseController
 {
     /**
-     * Renderiza la página de inicio de sesión.
+     * Renderiza la página de los certificados.
      */
     public function index()
     {

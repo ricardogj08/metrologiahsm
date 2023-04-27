@@ -49,6 +49,7 @@ $routes->group('sistema', static function ($routes) {
         $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login', 'filter' => 'formsrates']);
         $routes->get('nueva-contrasena', 'System\Auth::newPassword', ['as' => 'system.auth.newPassword']);
     });
+
     // Certificates
     $routes->group('certificados', static function ($routes) {
         $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
