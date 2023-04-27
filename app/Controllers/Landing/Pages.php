@@ -28,6 +28,7 @@ class Pages extends BaseController
         return view('landing/pages/show', [
             'states'  => $states,
             'origins' => $origins,
+            'phones'  => setting()->get('App.general', 'phones'),
         ]);
     }
 }

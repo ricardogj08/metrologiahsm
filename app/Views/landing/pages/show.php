@@ -21,6 +21,7 @@
         <div class="fixed right-8 top-20 z-10">
             <?= $this->include('landing/components/WhatsApp') ?>
         </div>
+
         <!-- Header -->
         <header class="bg-black">
             <section class="px-8 py-4 flex justify-between items-center">
@@ -150,70 +151,29 @@
 
         <!-- Footer -->
         <footer class="py-8 bg-hsm-yellow-100">
+            <!-- Números telefónico -->
             <section class="w-11/12 mx-auto bg-white text-black rounded-md sm:rounded-full">
                 <ul class="px-6 py-4 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <li>
-                        <div class="lg:flex items-center text-center">
-                            <span class="inline-block mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                    <path fill="#FFD200" d="M2.8502.2139 2.018.17c-.2628 0-.5257.0877-.7009.263C.9227.7833.2657 1.4404.0904 2.3165-.2162 3.631.2657 5.208 1.4047 6.785c1.139 1.577 3.3293 4.1178 7.1843 5.213 1.2266.3505 2.1904.1314 2.979-.3504a2.5851 2.5851 0 0 0 1.139-1.6647l.1314-.6133c.0438-.1753-.0439-.3943-.2191-.4819L9.8594 7.6173c-.1752-.0877-.3942-.0438-.5256.1314L8.2386 9.1505c-.0877.0877-.219.1314-.3505.0877-.7447-.263-3.2417-1.3143-4.5998-3.9427-.0438-.1314-.0438-.2629.0439-.3504l1.0513-1.1828c.0877-.1314.1314-.3067.0877-.4381L3.2008.4767C3.1568.3453 3.0255.214 2.8502.214Z"></path>
-                                </svg>
-                            </span>
-                            <a
-                                href="tel:+524421959668"
-                                class="font-semibold hover:opacity-80 transition-all"
-                            >
-                                (442) 195 9668
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="lg:flex items-center text-center">
-                            <span class="inline-block mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                    <path fill="#FFD200" d="M2.8502.2139 2.018.17c-.2628 0-.5257.0877-.7009.263C.9227.7833.2657 1.4404.0904 2.3165-.2162 3.631.2657 5.208 1.4047 6.785c1.139 1.577 3.3293 4.1178 7.1843 5.213 1.2266.3505 2.1904.1314 2.979-.3504a2.5851 2.5851 0 0 0 1.139-1.6647l.1314-.6133c.0438-.1753-.0439-.3943-.2191-.4819L9.8594 7.6173c-.1752-.0877-.3942-.0438-.5256.1314L8.2386 9.1505c-.0877.0877-.219.1314-.3505.0877-.7447-.263-3.2417-1.3143-4.5998-3.9427-.0438-.1314-.0438-.2629.0439-.3504l1.0513-1.1828c.0877-.1314.1314-.3067.0877-.4381L3.2008.4767C3.1568.3453 3.0255.214 2.8502.214Z"></path>
-                                </svg>
-                            </span>
-                            <a
-                                href="tel:+524461135540"
-                                class="font-semibold hover:opacity-80 transition-all"
-                            >
-                                (446) 113 5540
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="lg:flex items-center text-center">
-                            <span class="inline-block mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                    <path fill="#FFD200" d="M2.8502.2139 2.018.17c-.2628 0-.5257.0877-.7009.263C.9227.7833.2657 1.4404.0904 2.3165-.2162 3.631.2657 5.208 1.4047 6.785c1.139 1.577 3.3293 4.1178 7.1843 5.213 1.2266.3505 2.1904.1314 2.979-.3504a2.5851 2.5851 0 0 0 1.139-1.6647l.1314-.6133c.0438-.1753-.0439-.3943-.2191-.4819L9.8594 7.6173c-.1752-.0877-.3942-.0438-.5256.1314L8.2386 9.1505c-.0877.0877-.219.1314-.3505.0877-.7447-.263-3.2417-1.3143-4.5998-3.9427-.0438-.1314-.0438-.2629.0439-.3504l1.0513-1.1828c.0877-.1314.1314-.3067.0877-.4381L3.2008.4767C3.1568.3453 3.0255.214 2.8502.214Z"></path>
-                                </svg>
-                            </span>
-                            <a
-                                href="tel:+524428078434"
-                                class="font-semibold hover:opacity-80 transition-all"
-                            >
-                                (442) 807 8434
-                            </a>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="lg:flex items-center text-center">
-                            <span class="inline-block mr-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
-                                    <path fill="#FFD200" d="M2.8502.2139 2.018.17c-.2628 0-.5257.0877-.7009.263C.9227.7833.2657 1.4404.0904 2.3165-.2162 3.631.2657 5.208 1.4047 6.785c1.139 1.577 3.3293 4.1178 7.1843 5.213 1.2266.3505 2.1904.1314 2.979-.3504a2.5851 2.5851 0 0 0 1.139-1.6647l.1314-.6133c.0438-.1753-.0439-.3943-.2191-.4819L9.8594 7.6173c-.1752-.0877-.3942-.0438-.5256.1314L8.2386 9.1505c-.0877.0877-.219.1314-.3505.0877-.7447-.263-3.2417-1.3143-4.5998-3.9427-.0438-.1314-.0438-.2629.0439-.3504l1.0513-1.1828c.0877-.1314.1314-.3067.0877-.4381L3.2008.4767C3.1568.3453 3.0255.214 2.8502.214Z"></path>
-                                </svg>
-                            </span>
-                            <a
-                                href="tel:+524424739567"
-                                class="font-semibold hover:opacity-80 transition-all"
-                            >
-                                (442) 473 9567
-                            </a>
-                        </div>
-                    </li>
+                    <?php foreach (explode(', ', $phones) as $phone): ?>
+                        <li>
+                            <div class="lg:flex items-center text-center">
+                                <span class="inline-block mr-2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+                                        <path fill="#FFD200" d="M2.8502.2139 2.018.17c-.2628 0-.5257.0877-.7009.263C.9227.7833.2657 1.4404.0904 2.3165-.2162 3.631.2657 5.208 1.4047 6.785c1.139 1.577 3.3293 4.1178 7.1843 5.213 1.2266.3505 2.1904.1314 2.979-.3504a2.5851 2.5851 0 0 0 1.139-1.6647l.1314-.6133c.0438-.1753-.0439-.3943-.2191-.4819L9.8594 7.6173c-.1752-.0877-.3942-.0438-.5256.1314L8.2386 9.1505c-.0877.0877-.219.1314-.3505.0877-.7447-.263-3.2417-1.3143-4.5998-3.9427-.0438-.1314-.0438-.2629.0439-.3504l1.0513-1.1828c.0877-.1314.1314-.3067.0877-.4381L3.2008.4767C3.1568.3453 3.0255.214 2.8502.214Z"></path>
+                                    </svg>
+                                </span>
+                                <a
+                                    href="tel:<?= esc(stripAllSpaces($phone), 'url') ?>"
+                                    class="font-semibold hover:opacity-80 transition-all"
+                                >
+                                    <?= esc($phone) ?>
+                                </a>
+                            </div>
+                        </li>
+                    <?php endforeach ?>
                 </ul>
             </section>
+            <!-- Fin de los número telefónicos -->
             <section class="mt-10 flex flex-col justify-center sm:flex-row sm:justify-between items-center w-11/12 mx-auto gap-y-5 gap-x-3">
                 <div class="font-bold text-black text-center sm:text-left">
                     <p>
@@ -228,11 +188,13 @@
                         Metrología HSM. Todos los derechos Reservados 2023. <strong class="font-semibold">Aviso de privacidad.</strong>
                     </p>
                     <p>
-                        Diseño y desarrollo web por: Genotipo®
+                        Diseño y desarrollo web por:
+                        <a href="https://www.genotipo.com/" target="_blank" rel="noreferrer noopener nofollow" class="hover:font-bold transition">
+                            Genotipo®
+                        </a>
                     </p>
                 </div>
             </section>
         </footer>
     </div>
-
 <?= $this->endSection() ?>
