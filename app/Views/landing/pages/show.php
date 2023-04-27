@@ -173,7 +173,8 @@
                     <?php endforeach ?>
                 </ul>
             </section>
-            <!-- Fin de los número telefónicos -->
+            <!-- Fin de los números telefónicos -->
+
             <section class="mt-10 flex flex-col justify-center sm:flex-row sm:justify-between items-center w-11/12 mx-auto gap-y-5 gap-x-3">
                 <div class="font-bold text-black text-center sm:text-left">
                     <p>

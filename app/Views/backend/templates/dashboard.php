@@ -59,6 +59,6 @@
 <?= $this->section('javascript') ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
 
-    <!-- Sección de scripts de javascript agregados a la página web -->
+    <!-- Sección de scripts agregados de javascript -->
     <?= $this->renderSection('javascript') ?>
 <?= $this->endSection() ?>

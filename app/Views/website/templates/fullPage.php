@@ -1,7 +1,8 @@
-<?= $this->extend('system/templates/page') ?>
+<?= $this->extend('website/templates/default') ?>
 
 <?= $this->section('head') ?>
-    <!-- Plantilla base para todas las páginas del sistema -->
+    <!-- Plantilla base para todas las páginas del sitio web que no requieren Google Tag Manager -->
+    <meta name="robots" content="none">
 
     <!-- Sección de etiquetas agregadas al head -->
     <?= $this->renderSection('head') ?>
@@ -13,8 +14,6 @@
 <?= $this->endSection() ?>
 
 <?= $this->section('javascript') ?>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
-
     <!-- Sección de scripts agregados de javascript -->
     <?= $this->renderSection('javascript') ?>
 <?= $this->endSection() ?>

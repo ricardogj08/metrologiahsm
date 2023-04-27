@@ -20,7 +20,7 @@ $theme = setting()->get('App.general', 'theme');
     <!-- Sección del contenido agregado a la página web -->
     <?= $this->renderSection('content') ?>
 
-    <!-- Sección de scripts de javascript agregados a la página web -->
+    <!-- Sección de scripts agregados de javascript -->
     <?= $this->renderSection('javascript') ?>
 </body>
 </html>
