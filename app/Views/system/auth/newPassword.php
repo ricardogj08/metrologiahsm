@@ -50,14 +50,14 @@
 
         <!-- Campo de repetir contraseña -->
         <div>
-            <label for="confirm-password" class="text-hsm-gray-100 text-15 mb-2 block">
+            <label for="pass_confirm" class="text-hsm-gray-100 text-15 mb-2 block">
                 Repite la contraseña
             </label>
             <div>
                 <input
                     type="password"
-                    name="confirm-password"
-                    id="confirm-password"
+                    name="pass_confirm"
+                    id="pass_confirm"
                     value=""
                     placeholder="*****"
                     class="border border-hsm-purple-100 rounded-xl w-full p-2 outline-none text-hsm-gray-200 text-13"

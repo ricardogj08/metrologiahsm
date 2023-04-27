@@ -1,6 +1,6 @@
 <!-- Renderiza el botón de WhatsApp -->
 <a
-    href="https://wa.me/524421959668"
+    href="<?= single_service('uri', 'https://wa.me/')->setPath(setting()->get('App.apps', 'whatsapp')) ?>"
     target="_blank"
     rel="nofollow noopener noreferrer"
     aria-label="Chat de WhatsApp"
