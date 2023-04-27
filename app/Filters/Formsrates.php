@@ -10,7 +10,7 @@ use CodeIgniter\HTTP\ResponseInterface;
  * Filtro o middleware que bloquea una IP
  * después de 10 solicitudes por minuto en un formulario.
  */
-class Formsrates implements FilterInterface
+class FormsRates implements FilterInterface
 {
     /**
      * Do whatever processing this filter needs to do.

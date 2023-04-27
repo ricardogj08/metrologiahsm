@@ -39,6 +39,8 @@ app.defaultLocale = es
 app.appTimezone = America/Mexico_City
 app.forceGlobalSecureRequests = false
 
+TINIFY_API_KEY = 
+
 #--------------------------------------------------------------------
 # DATABASE
 #--------------------------------------------------------------------
