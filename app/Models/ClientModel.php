@@ -18,6 +18,7 @@ class ClientModel extends Model
     protected $useSoftDeletes   = false;
     protected $allowedFields    = [
         'name',
+        'alias',
         'sector_id',
     ];
 

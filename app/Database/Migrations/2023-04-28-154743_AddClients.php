@@ -21,6 +21,12 @@ class AddClients extends Migration
                 'constraint' => 128,
                 'unique'     => true,
             ],
+            'alias' => [
+                'type'       => 'varchar',
+                'constraint' => 64,
+                'unique'     => true,
+                'null'       => true,
+            ],
             'sector_id' => [
                 'type'       => 'char',
                 'constraint' => 36,
