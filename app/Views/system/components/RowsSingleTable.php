@@ -2,12 +2,17 @@
   <tr class="shadow-lg [&>td]:p-4 bg-white text-hsm-gray-200">
 
     <?php foreach ($row as $index => $field): ?>
-
       <td class="py-3 text-hsm-gray-1 px-2 border-hsm-purple-3 border-x-0 border-[1px] <?= $index === 'ID Instrumento' ? 'text-black font-bold' : '' ?>">
           <?= esc($field) ?>
       </td>
     <?php endforeach ?>
+    <td>
+        <button class="btn__download-file px-3 py-2 font-bold border-2 border-hsm-purple-200 text-hsm-purple-200 hover:bg-hsm-green-200 hover:text-white hover:border-transparent transition-all rounded-lg">
+            Descargar
+        </button>
+    </td>
   </tr>
 <?php endforeach ?>
+
 <!-- [&>td]:block lg:[&>td]:table-cell -->
 <!-- [&>th]:hidden lg:[&>th]:table-cell -->
