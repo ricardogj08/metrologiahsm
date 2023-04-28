@@ -1,12 +1,12 @@
 <!-- Extra Large Modal -->
-<div id="formModal" tabindex="-1" class="hidden justify-center fixed top-0 left-0 right-0 z-50 w-full px-4 py-10 items-center overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+<div id="modalNewDocument" tabindex="-1" class="hidden justify-center fixed top-0 left-0 right-0 z-50 w-full px-4 py-10 items-center overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="backdrop-blur-sm fixed top-0 left-0 w-full h-full z-0" style="background-color: rgba(0, 26, 176, 0.15);"></div>
     <div class="relative w-full max-w-7xl max-h-full">
         <!-- Modal content -->
         <div class="relative bg-white rounded-xl shadow">
             <!-- Modal header -->
             <div class="pt-3 pr-3 pl-16 pb-11 rounded-t-xl bg-hsm-white-2">
-                <button type="button" class="p-1.5 ml-auto flex items-center justify-end" data-modal-hide="formModal">
+                <button type="button" class="p-1.5 ml-auto flex items-center justify-end" data-modal-hide="modalNewDocument">
                     <svg class="transition hover:brightness-90 rounded-3xl" width="28" height="28" viewBox="0 0 28 28" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path fill="#F9FAFF" d="M-1292-75H108v800h-1400z"/><circle fill="#EB0047" cx="14" cy="14" r="14"/><path d="M7.985 7.985c.7-.691 1.83-.691 2.462 0l3.494 3.503 3.562-3.503c.7-.691 1.83-.691 2.461 0 .759.7.759 1.83 0 2.462L16.53 13.94l3.435 3.562c.759.7.759 1.83 0 2.461-.632.759-1.762.759-2.46 0L13.94 16.53l-3.494 3.435c-.632.759-1.763.759-2.462 0-.691-.632-.691-1.762 0-2.46l3.503-3.563-3.503-3.494c-.691-.632-.691-1.763 0-2.462Z" stroke="#EB0047" fill="#FFF"/></g></svg>
                     <span class="sr-only">Close modal</span>
                 </button>
