@@ -46,7 +46,7 @@ TINIFY_API_KEY =
 #--------------------------------------------------------------------
 
 database.default.hostname = 127.0.0.1
-database.default.database = metrologiahsm
+database.default.database = hsmmetrologia
 database.default.username = root
 database.default.password = root
 database.default.DBDriver = MySQLi

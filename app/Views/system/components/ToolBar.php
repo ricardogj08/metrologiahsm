@@ -7,7 +7,7 @@
       <!-- Render this button  depends of the role -->
       <!-- Create new button -->
       <?= $this
-      ->setVar('text','Nuevo documento')
-      ->setVar('modalName','modalNewDocument')
-      ->include('system/components/ButtonToggleModal') ?>
+          ->setVar('text', 'Nuevo documento')
+          ->setVar('modalName', 'modalNewDocument')
+          ->include('system/components/ButtonToggleModal') ?>
 </div>

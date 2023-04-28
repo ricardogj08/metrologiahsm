@@ -5,9 +5,9 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 
 /**
- * Migración que crea la tabla áreas de los clientes.
+ * Migración que crea la tabla de roles del sistema.
  */
-class AddAreas extends Migration
+class AddSystemRoles extends Migration
 {
     public function up()
     {
@@ -16,13 +16,14 @@ class AddAreas extends Migration
                 'type'       => 'char',
                 'constraint' => 36,
             ],
-            'client_id' => [
-                'type'       => 'char',
-                'constraint' => 36,
-            ],
             'name' => [
                 'type'       => 'varchar',
-                'constraint' => 128,
+                'constraint' => 32,
+                'unique'     => true,
+            ],
+            'description' => [
+                'type'       => 'varchar',
+                'constraint' => 64,
             ],
             'created_at' => [
                 'type' => 'datetime',
@@ -35,14 +36,12 @@ class AddAreas extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('client_id', 'clients', 'id', 'restrict', 'restrict');
-        $this->forge->addUniqueKey(['client_id', 'name']);
 
-        $this->forge->createTable('areas', true);
+        $this->forge->createTable('system_roles', true);
     }
 
     public function down()
     {
-        $this->forge->dropTable('areas', true);
+        $this->forge->dropTable('system_roles', true);
     }
 }

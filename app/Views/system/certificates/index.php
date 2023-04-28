@@ -28,7 +28,7 @@
         <section class="container-w">
             <div class="mb-10">
               <!-- Intro Toolbar -->
-              <?= $this->setVar('title','Documentos')->include('system/components/ToolBar') ?>
+              <?= $this->setVar('title', 'Documentos')->include('system/components/ToolBar') ?>
             </div>
 
             <!-- Table -->
@@ -39,8 +39,8 @@
                         <thead class="py-3 table-row-group">
                             <!-- Columns Table -->
                             <?= $this
-                            ->setVar('columnsDocuments',$columns)
-                            ->include('system/components/ColumnsTable') ?>
+                                ->setVar('columnsDocuments', $columns)
+                                ->include('system/components/ColumnsTable') ?>
                         </thead>
 
                         <tbody>
@@ -48,8 +48,8 @@
                             <tr class="shadow-lg [&>td]:p-4 bg-white text-hsm-gray-200">
                               <!-- Rows Table -->
                               <?= $this
-                              ->setVar('rowsInformation', $rowsInformation)
-                              ->include('system/components/RowsTable') ?>
+                                  ->setVar('rowsInformation', $rowsInformation)
+                                  ->include('system/components/RowsTable') ?>
 
                                 <!-- <td class="py-3 text-hsm-gray-1 pl-5 text-left rounded-tl-xl rounded-bl-xl border-hsm-purple-3 border-r-0 border-[1px] font-bold text-black">
                                   ABC-123
