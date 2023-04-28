@@ -1,4 +1,4 @@
-<button data-modal-target="<?= esc($modalName) ?>" data-modal-toggle="<?= esc($modalName) ?>" type="button" class="relative inline-block pl-4 pr-8   py-3 transition hover:brightness-90 bg-hsm-blue-100 rounded-lg ">
+<button data-modal-target="<?= esc($modalName) ?>" data-modal-toggle="<?= esc($modalName) ?>" type="button" class="relative inline-block pl-4 pr-8 py-3 transition hover:brightness-90 bg-hsm-blue-100 rounded-lg ">
     <span class="inline-block cursor-pointer mr-3 text-white font-semibold" >
         <?= esc($text) ?>
     </span>
