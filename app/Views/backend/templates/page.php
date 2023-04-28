@@ -33,6 +33,6 @@ $faviconMimeType = (new File(FCPATH . $favicon, true))->getMimeType();
 <?= $this->endSection() ?>
 
 <?= $this->section('javascript') ?>
-    <!-- Sección de scripts de javascript agregados a la página web -->
+    <!-- Sección de scripts agregados de javascript -->
     <?= $this->renderSection('javascript') ?>
 <?= $this->endSection() ?>

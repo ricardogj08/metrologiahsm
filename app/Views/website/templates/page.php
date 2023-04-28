@@ -4,7 +4,7 @@ $tagManager = setting()->get('App.apps', 'google:tagManager');
 $company    = setting()->get('App.general', 'company');
 ?>
 
-<?= $this->extend('landing/templates/default') ?>
+<?= $this->extend('website/templates/default') ?>
 
 <?= $this->section('head') ?>
     <!-- Plantilla base para todas las páginas del sitio web que requieren Google Tag Manager -->
@@ -67,8 +67,14 @@ $company    = setting()->get('App.general', 'company');
     <?php endif ?>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Header -->
+    <?= $this->include('website/components/Header') ?>
+
     <!-- Sección del contenido agregado a la página web -->
     <?= $this->renderSection('content') ?>
+
+    <!-- Footer -->
+    <?= $this->include('website/components/Footer') ?>
 <?= $this->endSection() ?>
 
 <?= $this->section('javascript') ?>

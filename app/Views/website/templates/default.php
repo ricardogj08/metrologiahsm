@@ -6,10 +6,10 @@ $favicon         = 'uploads/settings/' . setting()->get('App.general', 'favicon'
 $faviconMimeType = (new File(FCPATH . $favicon, true))->getMimeType();
 ?>
 
-<?= $this->extend('landing/templates/boilerplate') ?>
+<?= $this->extend('website/templates/boilerplate') ?>
 
 <?= $this->section('head') ?>
-    <!-- Plantilla base para todas las páginas de la landing -->
+    <!-- Plantilla base para todas las páginas del sitio web -->
 
     <!-- Declaración de la URL de la página web -->
     <link rel="canonical" href="<?= current_url() ?>" hreflang="<?= esc($lang) ?>">
