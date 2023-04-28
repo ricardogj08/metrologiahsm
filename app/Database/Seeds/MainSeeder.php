@@ -17,5 +17,10 @@ class MainSeeder extends Seeder
         $this->call('SettingSeeder');
         $this->call('RoleSeeder');
         $this->call('UserSeeder');
+        $this->call('TypeSeeder');
+        $this->call('SectorSeeder');
+        $this->call('ClientSeeder');
+        $this->call('SystemRoleSeeder');
+        $this->call('SystemUserSeeder');
     }
 }
