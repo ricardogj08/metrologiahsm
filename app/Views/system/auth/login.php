@@ -29,7 +29,13 @@
         </p>
     </hgroup>
 
-    <?= form_open('', ['class' => 'flex flex-col gap-y-5']) ?>
+    <?= form_open(url_to('system.auth.login'), ['class' => 'flex flex-col gap-y-5']) ?>
+        <p class="text-red-600 text-center">
+            <small>
+                <?= esc(session()->getFlashData('error')) ?>
+            </small>
+        </p>
+
         <!-- Campo del usuario -->
         <div>
             <label for="email" class="text-hsm-gray-100 text-15 mb-2 block">
@@ -44,11 +50,16 @@
                     type="email"
                     name="email"
                     id="email"
-                    value=""
+                    required
+                    maxlength="256"
+                    value="<?= set_value('email') ?>"
                     placeholder="Correo electrónico"
                     class="text-hsm-gray-200 text-13 w-full outline-none"
                 >
             </div>
+            <small class="text-red-600">
+                <?= validation_show_error('email') ?>
+            </small>
         </div>
         <!-- Fin del campo del usuario -->
 
@@ -66,11 +77,17 @@
                     type="password"
                     name="password"
                     id="password"
+                    required
+                    minlength="8"
+                    maxlength="32"
                     value=""
                     placeholder="*****"
                     class="text-hsm-gray-200 text-13 w-full outline-none"
                 >
             </div>
+            <small class="text-red-600">
+                <?= validation_show_error('password') ?>
+            </small>
         </div>
         <!-- Fin del campo de la contraseña -->
 

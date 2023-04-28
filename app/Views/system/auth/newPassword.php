@@ -29,7 +29,7 @@
         </p>
     </hgroup>
 
-    <?= form_open('', ['class' => 'flex flex-col gap-y-5']) ?>
+    <?= form_open(url_to('system.auth.newPassword'), ['class' => 'flex flex-col gap-y-5']) ?>
         <!-- Campo de la contraseña -->
         <div>
             <label for="password" class="text-hsm-gray-100 text-15 mb-2 block">
@@ -40,11 +40,17 @@
                     type="password"
                     name="password"
                     id="password"
+                    required
+                    minlength="8"
+                    maxlength="32"
                     value=""
                     placeholder="*****"
                     class="border border-hsm-purple-100 rounded-xl w-full p-2 outline-none text-hsm-gray-200 text-13"
                 >
             </div>
+            <small class="text-red-600">
+                <?= validation_show_error('password') ?>
+            </small>
         </div>
         <!-- Fin del campo de la contraseña -->
 
@@ -58,11 +64,17 @@
                     type="password"
                     name="pass_confirm"
                     id="pass_confirm"
+                    required
+                    minlength="8"
+                    maxlength="32"
                     value=""
                     placeholder="*****"
                     class="border border-hsm-purple-100 rounded-xl w-full p-2 outline-none text-hsm-gray-200 text-13"
                 >
             </div>
+            <small class="text-red-600">
+                <?= validation_show_error('pass_confirm') ?>
+            </small>
         </div>
         <!-- Fin del campo de repetir contraseña -->
 

@@ -43,6 +43,16 @@ class SystemUserModel extends Model
     protected $beforeInsertBatch = ['setIDGroup'];
 
     /**
+     * Rol del usuario.
+     */
+    public function role()
+    {
+        $this->builder()->join('system_roles', 'system_roles.id = system_users.system_role_id', 'inner');
+
+        return $this;
+    }
+
+    /**
      * Establece el UUID del usuario del sistema.
      */
     protected function setID(array $data)

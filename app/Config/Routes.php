@@ -45,15 +45,25 @@ $routes->group('landing', static function ($routes) {
  * Definición de rutas del sistema.
  */
 $routes->group('sistema', static function ($routes) {
+    // Definición de rutas de autenticación.
     $routes->group('login', static function ($routes) {
-        $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login', 'filter' => 'formsrates']);
-        $routes->get('nueva-contrasena', 'System\Auth::newPassword', ['as' => 'system.auth.newPassword']);
+        $routes->get('', 'System\Auth::login', ['as' => 'system.auth.login', 'filter' => ['systemAuthRedirect', 'systemAuthNewPassword']]);
+        $routes->post('', 'System\Auth::login', ['as' => 'system.auth.login', 'filter' => ['formsrates', 'systemAuthRedirect', 'systemAuthNewPassword']]);
+        $routes->match(['get', 'post'], 'nueva-contrasena', 'System\Auth::newPassword', ['as' => 'system.auth.newPassword', 'filter' => ['systemAuth', 'systemAuthRedirect']]);
     });
 
-    // Certificates
-    $routes->group('certificados', static function ($routes) {
-        $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
+    $routes->group('', ['filter' => ['systemAuth', 'systemAuthNewPassword']], static function ($routes) {
+        // Ruta de cierre de sesión
+        $routes->get('logout', 'System\Auth::logout', ['as' => 'system.auth.logout']);
+
+        // Certificates
+        $routes->group('certificados', static function ($routes) {
+            $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
+        });
     });
+
+    // Ruta por defecto.
+    $routes->addRedirect('', 'system.certificates.index', 301);
 });
 
 /**

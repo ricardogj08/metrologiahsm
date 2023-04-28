@@ -6,6 +6,9 @@ use App\Filters\Auth;
 use App\Filters\AuthRedirect;
 use App\Filters\FormsRates;
 use App\Filters\IsAdmin;
+use App\Filters\SystemAuth;
+use App\Filters\SystemAuthNewPassword;
+use App\Filters\SystemAuthRedirect;
 use CodeIgniter\Config\BaseConfig;
 use CodeIgniter\Filters\CSRF;
 use CodeIgniter\Filters\DebugToolbar;
@@ -20,15 +23,18 @@ class Filters extends BaseConfig
      * make reading things nicer and simpler.
      */
     public array $aliases = [
-        'csrf'          => CSRF::class,
-        'toolbar'       => DebugToolbar::class,
-        'honeypot'      => Honeypot::class,
-        'invalidchars'  => InvalidChars::class,
-        'secureheaders' => SecureHeaders::class,
-        'formsrates'    => FormsRates::class,
-        'auth'          => Auth::class,
-        'authredirect'  => AuthRedirect::class,
-        'isadmin'       => IsAdmin::class,
+        'csrf'                  => CSRF::class,
+        'toolbar'               => DebugToolbar::class,
+        'honeypot'              => Honeypot::class,
+        'invalidchars'          => InvalidChars::class,
+        'secureheaders'         => SecureHeaders::class,
+        'formsrates'            => FormsRates::class,
+        'auth'                  => Auth::class,
+        'authredirect'          => AuthRedirect::class,
+        'isadmin'               => IsAdmin::class,
+        'systemAuthRedirect'    => SystemAuthRedirect::class,
+        'systemAuth'            => SystemAuth::class,
+        'systemAuthNewPassword' => SystemAuthNewPassword::class,
     ];
 
     /**
