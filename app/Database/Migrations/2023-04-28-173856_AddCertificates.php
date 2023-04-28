@@ -5,9 +5,9 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 
 /**
- * Migración que crea la tabla de usuarios del sistema.
+ * Migración que crea la tabla de certificados.
  */
-class AddSystemUsers extends Migration
+class AddCertificates extends Migration
 {
     public function up()
     {
@@ -16,12 +16,7 @@ class AddSystemUsers extends Migration
                 'type'       => 'char',
                 'constraint' => 36,
             ],
-            'email' => [
-                'type'       => 'varchar',
-                'constraint' => 256,
-                'unique'     => true,
-            ],
-            'system_role_id' => [
+            'type_id' => [
                 'type'       => 'char',
                 'constraint' => 36,
             ],
@@ -39,19 +34,35 @@ class AddSystemUsers extends Migration
                 'constraint' => 36,
                 'null'       => true,
             ],
+            'file' => [
+                'type'       => 'varchar',
+                'constraint' => 64,
+                'unique'     => true,
+            ],
+            'instrument' => [
+                'type'       => 'varchar',
+                'constraint' => 128,
+            ],
+            'description' => [
+                'type'       => 'varchar',
+                'constraint' => 128,
+            ],
             'name' => [
                 'type'       => 'varchar',
                 'constraint' => 128,
             ],
-            'password' => [
-                'type'       => 'varchar',
-                'constraint' => 256,
+            'received_at' => [
+                'type' => 'datetime',
             ],
-            'active' => [
-                'type'       => 'tinyint',
-                'constraint' => 1,
-                'unsigned'   => true,
-                'default'    => false,
+            'calibrated_at' => [
+                'type' => 'datetime',
+            ],
+            'delivered_at' => [
+                'type' => 'datetime',
+            ],
+            'observations' => [
+                'type' => 'text',
+                'null' => true,
             ],
             'created_at' => [
                 'type' => 'datetime',
@@ -64,15 +75,16 @@ class AddSystemUsers extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
+        $this->forge->addForeignKey('type_id', 'types', 'id', 'restrict', 'restrict');
         $this->forge->addForeignKey('client_id', 'clients', 'id', 'restrict', 'cascade');
         $this->forge->addForeignKey('area_id', 'areas', 'id', 'restrict', 'cascade');
         $this->forge->addForeignKey('office_id', 'offices', 'id', 'restrict', 'cascade');
 
-        $this->forge->createTable('system_users', true);
+        $this->forge->createTable('certificates', true);
     }
 
     public function down()
     {
-        $this->forge->dropTable('system_users', true);
+        $this->forge->dropTable('certificates', true);
     }
 }

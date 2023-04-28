@@ -35,7 +35,7 @@ class AddOffices extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('client_id', 'clients', 'id', 'restrict', 'restrict');
+        $this->forge->addForeignKey('client_id', 'clients', 'id', 'restrict', 'cascade');
         $this->forge->addUniqueKey(['client_id', 'name']);
 
         $this->forge->createTable('offices', true);

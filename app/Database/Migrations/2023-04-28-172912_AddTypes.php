@@ -5,9 +5,9 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 
 /**
- * Migración que crea la tabla de las áreas de los clientes.
+ * Migración que crea la tabla de tipos de certificados.
  */
-class AddAreas extends Migration
+class AddTypes extends Migration
 {
     public function up()
     {
@@ -16,13 +16,10 @@ class AddAreas extends Migration
                 'type'       => 'char',
                 'constraint' => 36,
             ],
-            'client_id' => [
-                'type'       => 'char',
-                'constraint' => 36,
-            ],
             'name' => [
                 'type'       => 'varchar',
                 'constraint' => 128,
+                'unique'     => true,
             ],
             'created_at' => [
                 'type' => 'datetime',
@@ -35,14 +32,12 @@ class AddAreas extends Migration
         ]);
 
         $this->forge->addPrimaryKey('id');
-        $this->forge->addForeignKey('client_id', 'clients', 'id', 'restrict', 'cascade');
-        $this->forge->addUniqueKey(['client_id', 'name']);
 
-        $this->forge->createTable('areas', true);
+        $this->forge->createTable('types', true);
     }
 
     public function down()
     {
-        $this->forge->dropTable('areas', true);
+        $this->forge->dropTable('types', true);
     }
 }
