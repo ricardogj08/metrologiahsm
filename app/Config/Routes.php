@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Website\Pages::maintenance', ['as' => 'website.pages.home']);
+$routes->get('/', 'Website\Pages::construction', ['as' => 'website.pages.home']);
 
 /**
  * Definición de rutas de la landing.
