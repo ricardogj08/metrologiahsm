@@ -60,6 +60,11 @@ $routes->group('sistema', static function ($routes) {
         $routes->group('certificados', static function ($routes) {
             $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
         });
+
+        // Ruta de usuarios.
+        $routes->group('usuarios', static function ($routes) {
+            $routes->post('nuevo', 'System\Users::create', ['as' => 'system.users.create']);
+        });
     });
 
     // Ruta por defecto.
