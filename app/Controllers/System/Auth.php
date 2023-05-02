@@ -93,6 +93,8 @@ class Auth extends BaseController
             'active'   => true,
         ]);
 
+        session()->setFlashdata('success', 'Tu contraseña se ha actualizado correctamente');
+
         return $this->logout();
     }
 }

@@ -30,11 +30,18 @@
     </hgroup>
 
     <?= form_open(url_to('system.auth.login'), ['class' => 'flex flex-col gap-y-5']) ?>
-        <p class="text-red-600 text-center">
-            <small>
-                <?= esc(session()->getFlashData('error')) ?>
-            </small>
-        </p>
+        <ul class="text-center">
+            <li>
+                <small class="text-red-600">
+                    <?= esc(session()->getFlashData('error')) ?>
+                </small>
+            </li>
+            <li>
+                <small class="text-green-600">
+                    <?= esc(session()->getFlashData('success')) ?>
+                </small>
+            </li>
+        </ul>
 
         <!-- Campo del usuario -->
         <div>
