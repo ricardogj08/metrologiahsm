@@ -59,6 +59,7 @@ $routes->group('sistema', static function ($routes) {
         // Certificates
         $routes->group('certificados', static function ($routes) {
             $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
+            $routes->post('nuevo', 'System\Certificates::create', ['as' => 'system.certificates.create']);
         });
 
         // Ruta de usuarios.
