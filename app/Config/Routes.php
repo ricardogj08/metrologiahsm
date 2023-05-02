@@ -60,6 +60,7 @@ $routes->group('sistema', static function ($routes) {
         $routes->group('certificados', static function ($routes) {
             $routes->get('', 'System\Certificates::index', ['as' => 'system.certificates.index']);
             $routes->post('nuevo', 'System\Certificates::create', ['as' => 'system.certificates.create']);
+            $routes->get('descargar/(:segment)', 'System\Certificates::download/$1', ['as' => 'system.certificates.download']);
         });
 
         // Ruta de usuarios.

@@ -3,6 +3,7 @@
 namespace App\Controllers\System;
 
 use App\Controllers\BaseController;
+use CodeIgniter\Exceptions\PageNotFoundException;
 use CodeIgniter\I18n\Time;
 use RuntimeException;
 
@@ -28,7 +29,6 @@ class Certificates extends BaseController
             'file'          => 'uploaded[file]|max_size[file,8192]|mime_in[file,application/pdf]|ext_in[file,pdf]',
             'observations'  => 'if_exist|max_length[4096]',
         ])) {
-            return print_r($this->validator->getErrors());
             return redirect()->back();
         }
 
@@ -67,6 +67,77 @@ class Certificates extends BaseController
         $file->move(WRITEPATH . 'uploads', $newFileName);
 
         return redirect()->back();
+    }
+
+    /**
+     * Descarga un certificado.
+     *
+     * @param mixed|null $id
+     */
+    public function download($id = null)
+    {
+        // Valida si el certificado existe.
+        if (! $this->validateData(
+            ['id' => $id],
+            ['id' => 'required|exact_length[36]|alpha_dash|is_not_unique[certificates.id]']
+        )) {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $systemUserModel = model('SystemUserModel');
+
+        // Consulta los datos del usuario.
+        $user = $systemUserModel->select('system_users.id, system_users.client_id, system_users.area_id, system_users.office_id, system_roles.name as role')
+            ->role()
+            ->find(session('systemUser.id'));
+
+        $certificateModel = model('CertificateModel');
+
+        // Selecciona los campos a consultar.
+        $builder = $certificateModel->select('id, file');
+
+        /**
+         * Permite a los administradores descargar cualquier tipo de certificado
+         * y restringe la descarga de los certificados a los usuarios
+         * que pertenecen al mismo cliente, área y sucursal.
+         */
+        if ($user['role'] !== 'admin') {
+            $builder->where([
+                'client_id' => $user['client_id'],
+                'area_id'   => $user['area_id'],
+                'office_id' => $user['office_id'],
+            ]);
+        }
+
+        // Consulta los datos del certificado.
+        $certificate = $builder->find($id);
+
+        if (empty($certificate)) {
+            throw PageNotFoundException::forPageNotFound();
+        }
+
+        $downloadModel = model('DownloadModel');
+
+        // Consulta los datos de descarga del certificado.
+        $download = $downloadModel->select('id, certificate_id, system_user_id, redownload')
+            ->where('certificate_id', $certificate['id'])
+            ->where('system_user_id', $user['id'])
+            ->first();
+
+        // Registra o actualiza la descarga del certificado.
+        if (empty($download)) {
+            $downloadModel->insert([
+                'certificate_id' => $certificate['id'],
+                'system_user_id' => $user['id'],
+                'redownload'     => false,
+            ]);
+        } else {
+            $download->update($download['id'], ['redownload' => true]);
+        }
+
+        $filename = WRITEPATH . 'uploads/' . $certificate['file'];
+
+        return $this->response->download($filename, null, true);
     }
 
     /**
